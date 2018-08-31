@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PATH=$PATH:/usr/local/bin
 
 if [ -f ~/git-prompt.sh ]; then
@@ -18,7 +20,10 @@ alias ls='ls --color=auto'
 export NVM_DIR=~/.nvm
 
 # brew section
-if hash brew 2>/dev/null; then
+which brew 2>/dev/null 1>/dev/null
+BREW_INSTALLED=$?
+
+if [ $BREW_INSTALLED -eq 0 ]; then
   # bash completion for OS X
   if [ -f `brew --prefix`/etc/bash_completion ]; then
       . `brew --prefix`/etc/bash_completion
@@ -27,15 +32,37 @@ if hash brew 2>/dev/null; then
   if [ -f $(brew --repository)/Library/Contributions/brew_bash_completion.sh ]; then
     source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
   fi
+fi
 
-  if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-    source $(brew --prefix nvm)/nvm.sh
-  fi
+which bat 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  alias cat='bat'
+fi
+
+which prettyping 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  alias ping='prettyping --nolegend'
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+which htop 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  alias top='htop'
+fi
+
+which ncdu 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  alias du='ncdu -rr'
 fi
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+EDITOR=vim
+
+# THIS SHOULD BE LAST
 if [ -f ~/.bash_local ]; then
   source ~/.bash_local
 fi
+
