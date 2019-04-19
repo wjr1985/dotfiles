@@ -140,3 +140,6 @@ alias g='git'
 EDITOR=vim
 eval $(thefuck --alias)
 
+if [ -f ~/.zshrc_local ]; then
+  source ~/.zshrc_local
+fi
