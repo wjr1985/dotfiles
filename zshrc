@@ -1,8 +1,20 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+fpath=( "$HOME/.zfunctions" $fpath )
+
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/billr/.oh-my-zsh"
+# if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  export ZSH="/home/billr/.oh-my-zsh"
+# if [[ "$OSTYPE" == "linux-gnu" ]]; then
+#   export ZSH="/home/billr/.oh-my-zsh"
+# elif [[ "$OSTYPE" == "darwin" ]]; then
+#   export ZSH="/Users/billr/.oh-my-zsh"
+# elif [[ "$OSTYPE" == "freebsd" ]]; then
+#   export ZSH="/Users/billr/.oh-my-zsh"
+# else
+#   export ZSH="/home/billr/.oh-my-zsh"
+# fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -127,3 +139,4 @@ alias g='git'
 
 EDITOR=vim
 eval $(thefuck --alias)
+

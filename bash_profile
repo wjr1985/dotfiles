@@ -17,8 +17,6 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 alias ls='ls --color=auto'
 
-export NVM_DIR=~/.nvm
-
 # brew section
 which brew 2>/dev/null 1>/dev/null
 BREW_INSTALLED=$?
