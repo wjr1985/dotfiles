@@ -5,7 +5,7 @@ fpath=( "$HOME/.zfunctions" $fpath )
 
 # Path to your oh-my-zsh installation.
 # if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  export ZSH="/home/billr/.oh-my-zsh"
+  export ZSH="$HOME/.oh-my-zsh"
 # if [[ "$OSTYPE" == "linux-gnu" ]]; then
 #   export ZSH="/home/billr/.oh-my-zsh"
 # elif [[ "$OSTYPE" == "darwin" ]]; then
@@ -134,11 +134,14 @@ fi
 
 alias g='git'
 
+unsetopt auto_name_dirs
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 EDITOR=vim
 eval $(thefuck --alias)
+
+unsetopt nomatch
 
 if [ -f ~/.zshrc_local ]; then
   source ~/.zshrc_local
