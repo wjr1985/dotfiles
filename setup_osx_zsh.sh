@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # install zsh
-sudo apt-get install zsh
+brew install zsh
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# install wget
+brew install wget
 
 # install bat
 wget https://github.com/sharkdp/bat/releases/download/v0.6.0/bat_0.6.0_amd64.deb && sudo dpkg -i bat_0.6.0_amd64.deb && rm bat_0.6.0_amd64.deb
@@ -16,10 +19,7 @@ sudo wget -P /usr/bin/ https://raw.githubusercontent.com/denilsonsa/prettyping/m
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # install htop
-sudo apt-get install htop
-
-# make sure vim is installed
-sudo apt-get install vim
+brew install htop
 
 # get my vim dotfiles
 mkdir -p ~/github && cd ~/github && git clone git@github.com:wjr1985/vim_dotfiles && cd vim_dotfiles && ./activate.sh
@@ -28,12 +28,12 @@ mkdir -p ~/github && cd ~/github && git clone git@github.com:wjr1985/vim_dotfile
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/git-prompt.sh
 
 # get ncdu
-sudo apt-get install ncdu
+brew install ncdu
 
 # # get pure shell
 # mkdir ~/.zfunctions
 # cd ~/github && git clone git@github.com:sindresorhus/pure && cd pure && ln -s "$PWD/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup" && ln -s "$PWD/async.zsh" "$HOME/.zfunctions/async"
-#
+
 # get powerlevel 10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ln -s $PWD/p10k.zsh ~/.p10k.zsh
