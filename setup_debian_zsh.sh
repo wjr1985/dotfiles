@@ -18,8 +18,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 # install htop
 sudo apt-get install htop
 
-# make sure vim is installed
-sudo apt-get install vim
+# make sure neovim is installed
+sudo apt install neovim
 
 # get my vim dotfiles
 mkdir -p ~/github && cd ~/github && git clone git@github.com:wjr1985/vim_dotfiles && cd vim_dotfiles && ./activate.sh

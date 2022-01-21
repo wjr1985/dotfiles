@@ -21,6 +21,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 # install htop
 brew install htop
 
+# install neovim
+brew install neovim
+
+# alias neovim to vim
+alias vim="nvim"
+alias vi="nvim"
+alias vimdiff='nvim -d'
+export EDITOR=nvim
+
 # get my vim dotfiles
 mkdir -p ~/github && cd ~/github && git clone git@github.com:wjr1985/vim_dotfiles && cd vim_dotfiles && ./activate.sh
 
