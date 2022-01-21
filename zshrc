@@ -87,9 +87,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 if [[ `uname` == "Darwin" ]]; then
-  plugins=(git zsh-syntax-highlighting vi-mode macos zsh-autosuggestions)
+  plugins=(git zsh-syntax-highlighting vi-mode macos)
 else
-  plugins=(git zsh-syntax-highlighting vi-mode zsh-autosuggestions)
+  plugins=(git zsh-syntax-highlighting vi-mode)
 fi
 
 source $ZSH/oh-my-zsh.sh
