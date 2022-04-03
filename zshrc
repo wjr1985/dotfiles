@@ -129,6 +129,9 @@ AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
 # prompt pure
 # PROMPT='%F{white}%* '$PROMPT
 
+
+[[ -s "/opt/homebrew/bin/brew" ]] &&  eval "$(/opt/homebrew/bin/brew shellenv)"
+
 which bat 2>/dev/null 1>/dev/null
 if [ $? -eq 0 ]; then
   alias cat='bat'
