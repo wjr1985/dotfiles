@@ -1,8 +1,3 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-# [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -87,9 +82,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 if [[ `uname` == "Darwin" ]]; then
-  plugins=(git zsh-syntax-highlighting vi-mode macos)
+  plugins=(git zsh-syntax-highlighting vi-mode macos forgit)
 else
-  plugins=(git zsh-syntax-highlighting vi-mode)
+  plugins=(git zsh-syntax-highlighting vi-mode forgit)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -152,6 +147,11 @@ fi
 which ncdu 2>/dev/null 1>/dev/null
 if [ $? -eq 0 ]; then
   alias du='ncdu -rr'
+fi
+
+which exa 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  alias ls='exa'
 fi
 
 alias g='git'
