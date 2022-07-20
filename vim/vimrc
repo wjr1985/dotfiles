@@ -1,0 +1,72 @@
+set nocompatible
+
+" VIM plugins are here
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+compiler ruby
+syntax on
+set termguicolors
+set hlsearch
+set number
+set showmatch
+set incsearch
+set textwidth=0 nosmartindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set ruler
+set wrap
+set dir=/tmp//
+set scrolloff=5
+set ignorecase
+set smartcase
+set signcolumn=yes
+set undodir=~/.vim/undodir
+set undofile
+set undoreload=10000
+set undolevels=10000
+
+colorscheme darcula
+
+augroup markdown
+  au!
+  au BufNewFile,BufRead *.m,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" vim-test
+map <silent> <LocalLeader>rb :TestFile<CR>
+map <silent> <LocalLeader>rf :TestNearest<CR>
+map <silent> <LocalLeader>rc :TestNearest<CR>
+map <silent> <LocalLeader>rl :TestLast<CR>
+
+let test#strategy = "neovim"
+let test#neovim#term_position = "bo 15"
+
+
+" NERDTree
+map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+map <silent> <LocalLeader>nr :NERDTree<CR>
+map <silent> <LocalLeader>nf :NERDTreeFind<CR>
+
+" FZF
+map <silent> <leader>ff :Files<CR>
+map <silent> <leader>fg :GFiles<CR>
+map <silent> <leader>fb :Buffers<CR>
+map <silent> <leader>ft :Tags<CR>
+
+map <silent> <C-p> :Files<CR>
+
+" Ack
+map <LocalLeader>aw :Ack '<C-R><C-W>'
+noremap <Leader>a :Ack!<Space>
+
+map <silent> <LocalLeader>cc :TComment<CR>
+
+map <silent> <LocalLeader>pp :set paste!<CR>
+
+let g:airline_powerline_fonts=1
+
+command! W w

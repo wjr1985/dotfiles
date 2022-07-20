@@ -1,0 +1,46 @@
+if &compatible
+  set nocompatible
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'pangloss/vim-javascript'
+Plug 'hashivim/vim-terraform'
+Plug 'airblade/vim-gitgutter'
+Plug 'ddrscott/vim-side-search'
+Plug 'frazrepo/vim-rainbow'
+Plug 'doums/darcula'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'joshdick/onedark.vim', { 'branch': 'main' }
+Plug 'jtratner/vim-flavored-markdown'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tcomment_vim'
+Plug 'Townk/vim-autoclose'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-dispatch'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/matchit.zip'
+Plug 'vim-test/vim-test'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'dense-analysis/ale'
+Plug 'neomake/neomake'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
+call plug#end()
