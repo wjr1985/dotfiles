@@ -4,17 +4,18 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'pangloss/vim-javascript'
-Plug 'hashivim/vim-terraform'
+" Themes
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
+Plug 'doums/darcula'
+Plug 'morhetz/gruvbox'
+
+Plug 'sheerun/vim-polyglot'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'ddrscott/vim-side-search'
 Plug 'frazrepo/vim-rainbow'
-Plug 'doums/darcula'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'joshdick/onedark.vim', { 'branch': 'main' }
-Plug 'jtratner/vim-flavored-markdown'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
@@ -35,12 +36,38 @@ Plug 'vim-scripts/Align'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-test/vim-test'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'neomake/neomake'
+Plug 'projekt0n/github-nvim-theme'
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"
+" NCM2 group
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-ultisnips'
+" Plug 'SirVer/ultisnips'
+" END NCM2 group
+"
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+
+" DDM group
+" Plug 'Shougo/ddc.vim'
+" Plug 'vim-denops/denops.vim'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'Shougo/ddc-around'
+" Plug 'Shougo/ddc-matcher_head'
+" Plug 'Shougo/ddc-sorter_rank'
+
+Plug 'kassio/neoterm'
+Plug 'preservim/vimux'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
