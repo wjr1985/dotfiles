@@ -40,8 +40,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'neomake/neomake'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "
 " NCM2 group
 " Plug 'ncm2/ncm2'
@@ -51,23 +52,26 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'ncm2/ncm2-ultisnips'
 " Plug 'SirVer/ultisnips'
 " END NCM2 group
-"
+
+" LanguageClient-neovim
 " Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
 "     \ 'do': 'bash install.sh',
 "     \ }
 
-" DDM group
-" Plug 'Shougo/ddc.vim'
-" Plug 'vim-denops/denops.vim'
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'Shougo/ddc-around'
-" Plug 'Shougo/ddc-matcher_head'
-" Plug 'Shougo/ddc-sorter_rank'
+
+" DDC group
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'Shougo/ddc-nvim-lsp'
+Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
+Plug 'delphinus/ddc-treesitter'
 
 Plug 'kassio/neoterm'
 Plug 'preservim/vimux'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()

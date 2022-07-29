@@ -73,29 +73,6 @@ map <silent> <LocalLeader>cc :TComment<CR>
 
 map <silent> <LocalLeader>pp :set paste!<CR>
 
-let g:airline_powerline_fonts=1
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-"
-" NCM2
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-" set completeopt=noinsert,menuone,noselect
-"
-" DDM
-" call ddc#custom#patch_global('sources', ['around'])
-
-
-command! W w
-
-let g:LanguageClient_serverCommands = {
-  \ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
-  \ }
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'ruby': ['rubocop'],
-\}
-
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
@@ -129,4 +106,52 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-let g:LanguageClient_loggingFile = '/tmp/lc.log'
+let g:airline_powerline_fonts=1
+" Deoplete
+" let g:deoplete#enable_at_startup = 1
+"
+" NCM2
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+" set completeopt=noinsert,menuone,noselect
+
+" DDC
+lua << EEE
+require'lspconfig'.solargraph.setup{}
+EEE
+
+call ddc#custom#patch_global('sources', ['nvim-lsp', 'treesitter'])
+call ddc#custom#patch_global('sourceOptions', {
+        \ '_': {
+        \   'matchers': ['matcher_head'],
+        \   'sorters': ['sorter_rank']},
+        \ })
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'nvim-lsp': {
+      \   'mark': 'lsp',
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
+      \ })
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'treesitter': {'mark': 'T'},
+      \ })
+
+" <TAB>: completion.
+inoremap <silent><expr> <TAB>
+\ ddc#map#pum_visible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
+
+call ddc#enable()
+" END DDC
+
+
+command! W w
+
+" let g:LanguageClient_serverCommands = {
+"   \ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
+"   \ }
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'ruby': ['rubocop'],
+\}
+
