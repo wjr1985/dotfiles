@@ -131,7 +131,8 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
       \ })
 call ddc#custom#patch_global('sourceOptions', {
-      \ 'treesitter': {'mark': 'T'},
+      \ 'treesitter': {'mark': 'T',
+      \ 'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
       \ })
 
 " <TAB>: completion.
