@@ -82,9 +82,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 if [[ `uname` == "Darwin" ]]; then
-  plugins=(git zsh-syntax-highlighting vi-mode macos forgit)
+  plugins=(git zsh-syntax-highlighting vi-mode macos)
 else
-  plugins=(git zsh-syntax-highlighting vi-mode forgit)
+  plugins=(git zsh-syntax-highlighting vi-mode)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -161,7 +161,10 @@ alias g='git'
 unsetopt auto_name_dirs
 
 export EDITOR=vim
-eval $(thefuck --alias)
+which thefuck 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  eval $(thefuck --alias)
+fi
 
 unsetopt nomatch
 
