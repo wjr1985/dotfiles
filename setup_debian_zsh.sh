@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # install zsh
-sudo apt-get install zsh
+sudo apt-get install -y zsh
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # install bat
 wget https://github.com/sharkdp/bat/releases/download/v0.6.0/bat_0.6.0_amd64.deb && sudo dpkg -i bat_0.6.0_amd64.deb && rm bat_0.6.0_amd64.deb
@@ -16,10 +16,12 @@ sudo wget -P /usr/bin/ https://raw.githubusercontent.com/denilsonsa/prettyping/m
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # install htop
-sudo apt-get install htop
+sudo apt-get install -y htop
 
 # make sure neovim is installed
-sudo apt install neovim
+sudo add-apt-repository -y universe
+sudo apt install -y libfuse2
+wget https://github.com/neovim/neovim/releases/download/v0.9.4/nvim.appimage && sudo mv nvim.appimage /usr/local/bin/nvim && sudo chmod a+x /usr/local/bin/nvim
 
 # get my vim dotfiles
 #mkdir -p ~/github && cd ~/github && git clone git@github.com:wjr1985/vim_dotfiles && cd vim_dotfiles && ./activate.sh
@@ -28,7 +30,7 @@ sudo apt install neovim
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/git-prompt.sh
 
 # get ncdu
-sudo apt-get install ncdu
+sudo apt-get install -y ncdu
 
 # # get pure shell
 # mkdir ~/.zfunctions
