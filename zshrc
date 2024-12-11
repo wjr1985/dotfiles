@@ -124,11 +124,13 @@ AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
 # prompt pure
 # PROMPT='%F{white}%* '$PROMPT
 
-
-if [ "$(arch)" = "arm64" ]; then
+which arch 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  if [ "$(arch)" = "arm64" ]; then
     [[ -s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-else
+  else
     [[ -s "/usr/local/bin/brew" ]] && eval "$(/usr/local/bin/brew shellenv)"
+  fi
 fi
 
 which bat 2>/dev/null 1>/dev/null
