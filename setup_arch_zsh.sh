@@ -5,6 +5,9 @@ set -e
 # install zsh
 # sudo apt-get install -y zsh
 
+# install thefuck
+sudo pacman -S thefuck
+
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
