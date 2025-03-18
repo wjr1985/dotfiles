@@ -62,17 +62,6 @@ Plug 'RRethy/nvim-treesitter-endwise'
 "     \ 'do': 'bash install.sh',
 "     \ }
 
-
-" DDC group
-Plug 'Shougo/ddc.vim'
-Plug 'vim-denops/denops.vim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'Shougo/ddc-nvim-lsp'
-Plug 'Shougo/ddc-around'
-Plug 'Shougo/ddc-matcher_head'
-Plug 'Shougo/ddc-sorter_rank'
-Plug 'delphinus/ddc-treesitter'
-
 Plug 'kassio/neoterm'
 Plug 'preservim/vimux'
 
