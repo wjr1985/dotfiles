@@ -3,10 +3,10 @@
 set -e
 
 # install zsh
-# sudo apt-get install -y zsh
+sudo pacman --noconfirm -S zsh
 
 # install thefuck
-sudo pacman -S thefuck
+sudo pacman --noconfirm -S thefuck
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -17,30 +17,20 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# install bat
-# wget https://github.com/sharkdp/bat/releases/download/v0.6.0/bat_0.6.0_amd64.deb && sudo dpkg -i bat_0.6.0_amd64.deb && rm bat_0.6.0_amd64.deb
-
 # install prettyping
-# sudo wget -P /usr/bin/ https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping && sudo chmod a+x /usr/bin/prettyping
+sudo pacman --noconfirm -S prettyping
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # install htop
-# sudo apt-get install -y htop
+sudo pacman --noconfirm -S htop
 
 # make sure neovim is installed
-sudo pacman -S neovim
-
-# get my vim dotfiles
-#mkdir -p ~/github && cd ~/github && git clone git@github.com:wjr1985/vim_dotfiles && cd vim_dotfiles && ./activate.sh
-
-# get git-prompt.sh
-# wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/git-prompt.sh
+sudo pacman --noconfirm -S neovim
 
 # get ncdu
-#sudo apt-get install -y ncdu
-sudo pacman -S ncdu
+sudo pacman --noconfirm -S ncdu
 
 # # get pure shell
 # mkdir ~/.zfunctions

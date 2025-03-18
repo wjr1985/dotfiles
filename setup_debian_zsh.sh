@@ -3,6 +3,9 @@
 # install zsh
 sudo apt-get install -y zsh
 
+# install thefuck
+sudo apt install thefuck
+
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
@@ -11,9 +14,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# install bat
-wget https://github.com/sharkdp/bat/releases/download/v0.6.0/bat_0.6.0_amd64.deb && sudo dpkg -i bat_0.6.0_amd64.deb && rm bat_0.6.0_amd64.deb
 
 # install prettyping
 sudo wget -P /usr/bin/ https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping && sudo chmod a+x /usr/bin/prettyping
@@ -27,21 +27,11 @@ sudo apt-get install -y htop
 # make sure neovim is installed
 sudo add-apt-repository -y universe
 sudo apt install -y libfuse2
-wget https://github.com/neovim/neovim/releases/download/v0.9.4/nvim.appimage && sudo mv nvim.appimage /usr/local/bin/nvim && sudo chmod a+x /usr/local/bin/nvim
-
-# get my vim dotfiles
-#mkdir -p ~/github && cd ~/github && git clone git@github.com:wjr1985/vim_dotfiles && cd vim_dotfiles && ./activate.sh
-
-# get git-prompt.sh
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/git-prompt.sh
+wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim.appimage && sudo mv nvim.appimage /usr/local/bin/nvim && sudo chmod a+x /usr/local/bin/nvim
 
 # get ncdu
 sudo apt-get install -y ncdu
 
-# # get pure shell
-# mkdir ~/.zfunctions
-# cd ~/github && git clone git@github.com:sindresorhus/pure && cd pure && ln -s "$PWD/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup" && ln -s "$PWD/async.zsh" "$HOME/.zfunctions/async"
-#
 # get powerlevel 10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 ln -s $PWD/p10k.zsh ~/.p10k.zsh
