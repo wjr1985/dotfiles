@@ -4,7 +4,10 @@
 sudo apt-get install -y zsh
 
 # install thefuck
-sudo apt install thefuck
+sudo apt install -y thefuck
+
+# install lsd
+sudo apt install -y lsd
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -14,6 +17,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# install zsh-aliases-lsd
+# git clone https://github.com/yuhonas/zsh-aliases-lsd #{ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-aliases-lsd
 
 # install prettyping
 sudo wget -P /usr/bin/ https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping && sudo chmod a+x /usr/bin/prettyping

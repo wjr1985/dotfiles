@@ -8,6 +8,9 @@ sudo pacman --noconfirm -S zsh
 # install thefuck
 sudo pacman --noconfirm -S thefuck
 
+# install lsd
+sudo pacman --noconfirm -S lsd
+
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
@@ -16,6 +19,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# install zsh-aliases-lsd
+git clone https://github.com/yuhonas/zsh-aliases-lsd #{ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-aliases-lsd
 
 # install prettyping
 sudo pacman --noconfirm -S prettyping
