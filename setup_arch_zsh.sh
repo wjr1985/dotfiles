@@ -56,3 +56,5 @@ ln -s $PWD/p10k.zsh ~/.p10k.zsh
 mv ~/.zshrc ~/.zshrc-bak
 cd ~/github/dotfiles
 ln -s $PWD/zshrc ~/.zshrc
+mkdir -p ~/.config
+ln -s $PWD/starship_config.toml ~/.config/starship.toml
