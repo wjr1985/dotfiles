@@ -23,6 +23,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # install zsh-aliases-lsd
 git clone https://github.com/yuhonas/zsh-aliases-lsd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-aliases-lsd
 
+# install starship
+sudo pacman -S starship
+
+# install bat
+# wget https://github.com/sharkdp/bat/releases/download/v0.6.0/bat_0.6.0_amd64.deb && sudo dpkg -i bat_0.6.0_amd64.deb && rm bat_0.6.0_amd64.deb
+
 # install prettyping
 sudo pacman --noconfirm -S prettyping
 
