@@ -124,12 +124,20 @@ AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
 # prompt pure
 # PROMPT='%F{white}%* '$PROMPT
 
-which arch 2>/dev/null 1>/dev/null
-if [ $? -eq 0 ]; then
-  if [ "$(arch)" = "arm64" ]; then
-    [[ -s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-  else
-    [[ -s "/usr/local/bin/brew" ]] && eval "$(/usr/local/bin/brew shellenv)"
+
+# Skip Homebrew setup on Bazzite OS
+if grep -q "bazzite" /etc/os-release 2>/dev/null; then
+  # Running on Bazzite, skip Homebrew setup
+  :
+else
+  # Original Homebrew setup logic
+  which arch 2>/dev/null 1>/dev/null
+  if [ $? -eq 0 ]; then
+    if [ "$(arch)" = "arm64" ]; then
+      [[ -s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+      [[ -s "/usr/local/bin/brew" ]] && eval "$(/usr/local/bin/brew shellenv)"
+    fi
   fi
 fi
 
