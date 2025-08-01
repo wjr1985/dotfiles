@@ -44,6 +44,9 @@ sudo pacman --noconfirm -S neovim
 # get ncdu
 sudo pacman --noconfirm -S ncdu
 
+# get meslo nerd fonts
+sudo pacman --noconfirm -S ttf-meslo-nerd
+
 # # get pure shell
 # mkdir ~/.zfunctions
 # cd ~/github && git clone git@github.com:sindresorhus/pure && cd pure && ln -s "$PWD/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup" && ln -s "$PWD/async.zsh" "$HOME/.zfunctions/async"
