@@ -2,8 +2,8 @@
 
 set -e
 
-# install required packages in one go
-sudo pacman --noconfirm -S zsh thefuck lsd starship prettyping htop neovim ncdu ttf-meslo-nerd
+# install required packages in one go (sorted alphabetically)
+sudo pacman --noconfirm -S htop lsd ncdu neovim prettyping starship thefuck tmux ttf-meslo-nerd zsh
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -17,17 +17,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # install zsh-aliases-lsd
 git clone https://github.com/yuhonas/zsh-aliases-lsd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-aliases-lsd
 
-
 # install bat
 # wget https://github.com/sharkdp/bat/releases/download/v0.6.0/bat_0.6.0_amd64.deb && sudo dpkg -i bat_0.6.0_amd64.deb && rm bat_0.6.0_amd64.deb
 
-
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-
-
-
-
 
 # # get pure shell
 # mkdir ~/.zfunctions
