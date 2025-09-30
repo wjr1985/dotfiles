@@ -86,15 +86,15 @@ set -g __fish_git_prompt_showuntrackedfiles 'yes'
 set -g __fish_git_prompt_showupstream 'auto'
 set -g __fish_git_prompt_showcolorhints 'yes'
 
-# Git prompt characters
+# Git prompt characters (matching starship defaults)
 set -g __fish_git_prompt_char_stateseparator ' '
-set -g __fish_git_prompt_char_dirtystate '✗'
-set -g __fish_git_prompt_char_stagedstate '●'
-set -g __fish_git_prompt_char_untrackedfiles '…'
-set -g __fish_git_prompt_char_stashstate '⚑'
-set -g __fish_git_prompt_char_upstream_ahead '↑'
-set -g __fish_git_prompt_char_upstream_behind '↓'
-set -g __fish_git_prompt_char_upstream_diverged '⇅'
+set -g __fish_git_prompt_char_dirtystate '*'
+set -g __fish_git_prompt_char_stagedstate '+'
+set -g __fish_git_prompt_char_untrackedfiles '?'
+set -g __fish_git_prompt_char_stashstate '$'
+set -g __fish_git_prompt_char_upstream_ahead '⇡'
+set -g __fish_git_prompt_char_upstream_behind '⇣'
+set -g __fish_git_prompt_char_upstream_diverged '⇕'
 set -g __fish_git_prompt_char_upstream_equal ''
 
 # Git prompt colors
