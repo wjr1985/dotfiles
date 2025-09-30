@@ -9,10 +9,10 @@ sudo pacman --noconfirm -S fish htop lsd ncdu nvim prettyping thefuck tmux ttf-m
 fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 
 # install fish plugins
-fish -c "fisher install PatrickF1/fzf.fish"
+#fish -c "fisher install PatrickF1/fzf.fish"
 
 # install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+#git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # install the fish config from this repo
 mkdir -p ~/.config/fish

@@ -14,31 +14,31 @@ end
 
 # bat alias
 if command -v bat >/dev/null 2>&1
-    alias cat='bat'
+    alias cat 'bat'
 end
 
 # prettyping alias
 if command -v prettyping >/dev/null 2>&1
-    alias ping='prettyping --nolegend'
+    alias ping 'prettyping --nolegend'
 end
 
 # htop alias
 if command -v htop >/dev/null 2>&1
-    alias top='htop'
+    alias top 'htop'
 end
 
 # ncdu alias
 if command -v ncdu >/dev/null 2>&1
-    alias du='ncdu -rr'
+    alias du 'ncdu -rr'
 end
 
 # exa alias
 if command -v exa >/dev/null 2>&1
-    alias ls='exa'
+    alias ls 'exa'
 end
 
 # git alias
-alias g='git'
+alias g 'git'
 
 # editor
 set -gx EDITOR vim
@@ -50,14 +50,14 @@ end
 
 # tmuxinator alias
 if command -v tmuxinator >/dev/null 2>&1
-    alias tm='tmuxinator'
+    alias tm 'tmuxinator'
 end
 
 # nvim aliases
 if command -v nvim >/dev/null 2>&1
-    alias vim='nvim'
-    alias vi='nvim'
-    alias vimdiff='nvim -d'
+    alias vim 'nvim'
+    alias vi 'nvim'
+    alias vimdiff 'nvim -d'
     set -gx EDITOR nvim
 end
 
@@ -67,7 +67,7 @@ if test -f ~/.config/fish/local.fish
 end
 
 # whatismyip alias
-alias whatismyip='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F"\"" "{ print \$2}"'
+alias whatismyip 'dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F"\"" "{ print \$2}"'
 
 # ytmp3 function
 function ytmp3
@@ -135,3 +135,8 @@ function fish_prompt
     set_color normal
     printf '\n❯ '
 end
+
+alias ls 'lsd'
+alias exa 'lsd'
+alias ll 'lsd -l'
+alias la 'lsd -la'
