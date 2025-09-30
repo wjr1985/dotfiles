@@ -79,63 +79,6 @@ if test -f ~/.fzf/shell/key-bindings.fish
     source ~/.fzf/shell/key-bindings.fish
 end
 
-# Git prompt configuration - show detailed git status
-set -g __fish_git_prompt_showdirtystate 'yes'
-set -g __fish_git_prompt_showstashstate 'yes'
-set -g __fish_git_prompt_showuntrackedfiles 'yes'
-set -g __fish_git_prompt_showupstream 'auto'
-set -g __fish_git_prompt_showcolorhints 'yes'
-
-# Git prompt characters (matching starship defaults)
-set -g __fish_git_prompt_char_stateseparator ' '
-set -g __fish_git_prompt_char_dirtystate '*'
-set -g __fish_git_prompt_char_stagedstate '+'
-set -g __fish_git_prompt_char_untrackedfiles '?'
-set -g __fish_git_prompt_char_stashstate '$'
-set -g __fish_git_prompt_char_upstream_ahead '⇡'
-set -g __fish_git_prompt_char_upstream_behind '⇣'
-set -g __fish_git_prompt_char_upstream_diverged '⇕'
-set -g __fish_git_prompt_char_upstream_equal ''
-
-# Git prompt colors
-set -g __fish_git_prompt_color_branch yellow
-set -g __fish_git_prompt_color_dirtystate red
-set -g __fish_git_prompt_color_stagedstate green
-set -g __fish_git_prompt_color_untrackedfiles cyan
-set -g __fish_git_prompt_color_upstream magenta
-
-# Custom prompt with git info
-function fish_prompt
-    set -l last_status $status
-
-    # User and host
-    set_color cyan
-    printf '%s' $USER
-    set_color normal
-    printf '@'
-    set_color green
-    printf '%s' (prompt_hostname)
-    set_color normal
-    printf ' '
-
-    # Current directory
-    set_color blue
-    printf '%s' (prompt_pwd)
-    set_color normal
-
-    # Git info
-    printf '%s' (fish_git_prompt)
-
-    # Status indicator
-    if test $last_status -ne 0
-        set_color red
-        printf ' [%d]' $last_status
-    end
-
-    set_color normal
-    printf '\n❯ '
-end
-
 alias ls 'lsd'
 alias exa 'lsd'
 alias ll 'lsd -l'
