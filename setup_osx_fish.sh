@@ -15,6 +15,7 @@ fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/fun
 #fish -c "fisher install PatrickF1/fzf.fish"
 fish -c "fisher install jorgebucaran/autopair.fish"
 fish -c "fisher install jethrokuan/z"
+fish -c "fisher install pure-fish/pure"
 
 # install fzf
 #git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --no-bash --no-zsh --all

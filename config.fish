@@ -79,6 +79,28 @@ if test -f ~/.fzf/shell/key-bindings.fish
     source ~/.fzf/shell/key-bindings.fish
 end
 
+# ASDF configuration code
+if test -d "$HOME/.asdf"; or test -n "$ASDF_DATA_DIR"
+    if test -z $ASDF_DATA_DIR
+        set _asdf_shims "$HOME/.asdf/shims"
+    else
+        set _asdf_shims "$ASDF_DATA_DIR/shims"
+    end
+
+    # Do not use fish_add_path (added in Fish 3.2) because it
+    # potentially changes the order of items in PATH
+    if not contains $_asdf_shims $PATH
+        set -gx --prepend PATH $_asdf_shims
+    end
+    set --erase _asdf_shims
+end
+
+# Skip pure settings on CachyOS
+if not grep -q "cachyos" /etc/os-release 2>/dev/null
+    set --universal pure_show_system_time true
+    set --universal pure_enable_git true
+end
+
 alias ls 'lsd'
 alias exa 'lsd'
 alias ll 'lsd -l'
