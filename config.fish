@@ -105,3 +105,8 @@ alias ls 'lsd'
 alias exa 'lsd'
 alias ll 'lsd -l'
 alias la 'lsd -la'
+
+# zoxide integration
+if command -v zoxide >/dev/null 2>&1
+    zoxide init fish | source
+end
