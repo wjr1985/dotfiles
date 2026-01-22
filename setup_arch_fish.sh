@@ -3,7 +3,7 @@
 set -e
 
 # install required packages in one go (sorted alphabetically)
-sudo pacman --noconfirm -S fish htop lsd ncdu nvim prettyping thefuck tmux ttf-meslo-nerd zoxide
+sudo pacman --noconfirm -S fish htop lsd ncdu nvim prettyping starship thefuck tmux ttf-meslo-nerd zoxide
 
 # install fisher (fish plugin manager)
 fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
@@ -33,3 +33,6 @@ else
     fi
     ln -s $PWD/config.fish ~/.config/fish/config.fish
 fi
+
+# setup starship config
+ln -sf $PWD/starship_config.toml ~/.config/starship.toml

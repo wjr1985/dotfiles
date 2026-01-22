@@ -6,7 +6,7 @@ set -e
 brew install fish
 
 # install other tools via brew
-brew install bat htop lsd ncdu neovim prettyping thefuck tmux zoxide
+brew install bat htop lsd ncdu neovim prettyping starship thefuck tmux zoxide
 
 # install fisher (fish plugin manager)
 fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
@@ -26,3 +26,6 @@ if [ -f ~/.config/fish/config.fish ]; then
 fi
 cd ~/github/dotfiles
 ln -s $PWD/config.fish ~/.config/fish/config.fish
+
+# setup starship config
+ln -sf $PWD/starship_config.toml ~/.config/starship.toml

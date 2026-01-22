@@ -8,6 +8,11 @@ staged = '+${count}'
 modified = '!${count}'
 untracked = '?${count}'
 
+[aws]
+format = '[$symbol($profile )(\($region\) )]($style)'
+symbol = '☁️ '
+style = 'bold yellow'
+
 [custom.update]
 when = "[ -x /usr/bin/rpm-ostree ] && /usr/bin/rpm-ostree status --json | /usr/bin/jq -e \".deployments[0].booted == false\" > /dev/null;"
 command = 'echo "New deployment staged"'

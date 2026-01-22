@@ -110,3 +110,9 @@ alias la 'lsd -la'
 if command -v zoxide >/dev/null 2>&1
     zoxide init fish | source
 end
+
+# starship integration
+if command -v starship >/dev/null 2>&1
+    starship init fish | source
+    set -gx STARSHIP_CONFIG ~/.config/starship.toml
+end
