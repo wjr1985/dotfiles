@@ -214,3 +214,11 @@ ytmp3() {
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(starship init zsh)"
+
+# Run fastfetch on interactive shell startup
+if [[ -o interactive ]]; then
+  which fastfetch 2>/dev/null 1>/dev/null
+  if [ $? -eq 0 ]; then
+    fastfetch
+  fi
+fi
