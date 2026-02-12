@@ -13,8 +13,8 @@ if not grep -q "bazzite" /etc/os-release 2>/dev/null
 end
 
 # Add ~/.local/bin to PATH
-if not contains /home/billr/.local/bin $PATH
-    set -gx --prepend PATH /home/billr/.local/bin
+if not contains $HOME/.local/bin $PATH
+    set -gx --prepend PATH $HOME/.local/bin
 end
 
 # bat alias
