@@ -36,3 +36,6 @@ fi
 
 # setup starship config
 ln -sf $PWD/starship_config.toml ~/.config/starship.toml
+
+# setup tmux config
+ln -sf $PWD/tmux.conf ~/.tmux.conf
