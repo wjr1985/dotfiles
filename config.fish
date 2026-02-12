@@ -95,6 +95,15 @@ alias exa 'lsd'
 alias ll 'lsd -l'
 alias la 'lsd -la'
 
+# pbcopy alias for Linux (macOS has it natively)
+if test (uname) = "Linux"
+    if test "$XDG_SESSION_TYPE" = "wayland"
+        alias pbcopy 'wl-copy'
+    else
+        alias pbcopy 'xclip -selection clipboard'
+    end
+end
+
 # zoxide integration
 if command -v zoxide >/dev/null 2>&1
     zoxide init fish | source
