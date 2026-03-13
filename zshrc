@@ -200,6 +200,15 @@ if [ -f ~/.zshrc_local ]; then
   source ~/.zshrc_local
 fi
 
+# pbcopy alias for Linux (macOS has it natively)
+if [[ "$(uname)" == "Linux" ]]; then
+  if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+    alias pbcopy='wl-copy'
+  else
+    alias pbcopy='xclip -selection clipboard'
+  fi
+fi
+
 alias whatismyip='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F"\"" "{ print \$2}"'
 
 ytmp3() {
