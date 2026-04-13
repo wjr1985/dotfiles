@@ -222,6 +222,11 @@ ytmp3() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+which zoxide 2>/dev/null 1>/dev/null
+if [ $? -eq 0 ]; then
+  eval "$(zoxide init zsh)"
+fi
+
 eval "$(starship init zsh)"
 
 # Run fastfetch on interactive shell startup
