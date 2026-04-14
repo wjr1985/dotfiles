@@ -1,17 +1,5 @@
 # Fish shell configuration
 
-# Skip Homebrew setup on Bazzite OS
-if not grep -q "bazzite" /etc/os-release 2>/dev/null
-    # Original Homebrew setup logic
-    if command -v arch >/dev/null 2>&1
-        if test (arch) = "arm64"
-            test -s "/opt/homebrew/bin/brew"; and eval "$(/opt/homebrew/bin/brew shellenv)"
-        else
-            test -s "/usr/local/bin/brew"; and eval "$(/usr/local/bin/brew shellenv)"
-        end
-    end
-end
-
 # Add ~/.local/bin to PATH
 if not contains $HOME/.local/bin $PATH
     set -gx --prepend PATH $HOME/.local/bin
@@ -67,18 +55,18 @@ if command -v nvim >/dev/null 2>&1
 end
 
 # ASDF version manager
-if command -v asdf >/dev/null 2>&1
-    if test -z $ASDF_DATA_DIR
-        set _asdf_shims "$HOME/.asdf/shims"
-    else
-        set _asdf_shims "$ASDF_DATA_DIR/shims"
-    end
-
-    if not contains $_asdf_shims $PATH
-        set -gx --prepend PATH $_asdf_shims
-    end
-    set --erase _asdf_shims
-end
+# if command -v asdf >/dev/null 2>&1
+#     if test -z $ASDF_DATA_DIR
+#         set _asdf_shims "$HOME/.asdf/shims"
+#     else
+#         set _asdf_shims "$ASDF_DATA_DIR/shims"
+#     end
+#
+#     if not contains $_asdf_shims $PATH
+#         set -gx --prepend PATH $_asdf_shims
+#     end
+#     set --erase _asdf_shims
+# end
 
 # Load local config if exists
 if test -f ~/.config/fish/local.fish
@@ -128,3 +116,6 @@ if command -v starship >/dev/null 2>&1
     starship init fish | source
     set -gx STARSHIP_CONFIG ~/.config/starship.toml
 end
+
+# mise
+~/.local/bin/mise activate fish | source
