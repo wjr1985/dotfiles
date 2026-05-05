@@ -36,11 +36,6 @@ alias g 'git'
 # editor
 set -gx EDITOR vim
 
-# thefuck integration
-if command -v thefuck >/dev/null 2>&1
-    thefuck --alias | source
-end
-
 # tmuxinator alias
 if command -v tmuxinator >/dev/null 2>&1
     alias tm 'tmuxinator'
