@@ -8,7 +8,7 @@ input=$(cat)
 # whitespace, so `read` won't collapse runs of it and empty/absent fields keep
 # their slot. Absent values default to "" (or 0) below and read back as empty.
 IFS=$'\037' read -r \
-    MODEL DIR COST DURATION_MS TOTAL_TOKENS CONTEXT_PCT EFFORT EXCEEDS_200K \
+    MODEL DIR COST DURATION_MS TOTAL_TOKENS CONTEXT_PCT EFFORT THINKING EXCEEDS_200K \
     LINES_ADDED LINES_REMOVED SESSION_ID \
     FIVE_H_PCT FIVE_H_RESET WEEK_PCT WEEK_RESET \
     <<< "$(echo "$input" | jq -r '
@@ -20,6 +20,7 @@ IFS=$'\037' read -r \
             ((.context_window.total_input_tokens // 0) + (.context_window.total_output_tokens // 0)),
             (.context_window.used_percentage // 0 | floor),
             (.effort.level // ""),
+            (.thinking.enabled // false),
             (.exceeds_200k_tokens // false),
             (.cost.total_lines_added // 0),
             (.cost.total_lines_removed // 0),
@@ -82,6 +83,7 @@ fmt_tokens() {
 if [ "$EXCEEDS_200K" = "true" ]; then DOT="${YELLOW}●${RESET}"; else DOT="${GREEN}●${RESET}"; fi
 LINE1="${DOT} [$MODEL]"
 [ -n "$EFFORT" ] && LINE1="${LINE1} ⚡ ${EFFORT}"
+[ "$THINKING" = "true" ] && LINE1="${LINE1} 💭"
 LINE1="${LINE1}  │  📂 ${DIR##*/}"
 
 # Git branch + dirty marker, cached per-session to /tmp so we don't shell out to
