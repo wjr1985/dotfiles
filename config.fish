@@ -113,4 +113,12 @@ if command -v starship >/dev/null 2>&1
 end
 
 # mise
-~/.local/bin/mise activate fish | source
+set -l mise_path
+if test (uname) = "Darwin"
+    set mise_path /opt/homebrew/opt/mise/bin/mise
+else
+    set mise_path ~/.local/bin/mise
+end
+if test -x $mise_path
+    $mise_path activate fish | source
+end
