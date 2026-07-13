@@ -1,0 +1,14 @@
+[tui]
+# Codex currently supports built-in status-line segments, not an external
+# command renderer like Claude Code. This is the closest native equivalent.
+status_line = [
+  "model-with-reasoning",
+  "project-name",
+  "git-branch",
+  "branch-changes",
+  "context-used",
+  "used-tokens",
+  "five-hour-limit",
+  "weekly-limit",
+]
+status_line_use_colors = true
